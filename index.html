@@ -7,36 +7,89 @@
     <meta name="author" content="Anna Musiał">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-
+    <!-- Style sheet -->
+    <link rel="stylesheet" href="/styles/styles.css">
     <title>Wakacyjny Kalkulator</title>
   </head>
   <body>
     <section>
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-lg-6">
-            <div>
-                <!-- CSSMap - South America -->
+<div class="container-fluid" id="homePage">
+    <div class="row" style="height: 100vh;">
+<!-- map load -->
+        <div class="col-lg-6  d-flex align-items-center">
+            <div class="border border-dark rounded-3 mx-auto mapContainer" style="width: 23rem;">
+<!-- CSSMap - South America -->
                 <div id="map-south-america">
                     <ul class="south-america">
-                    <li class="sam1"><a href="#argentina">Argentina</a></li>
-                    <li class="sam2"><a href="#bolivia">Bolivia</a></li>
-                    <li class="sam3"><a href="#brazil">Brazil</a></li>
+                    <li class="sam1"><a href="#argentina">Argentyna</a></li>
+                    <li class="sam2"><a href="#bolivia">Boliwia</a></li>
+                    <li class="sam3"><a href="#brazil">Brazylia</a></li>
                     <li class="sam4"><a href="#chile">Chile</a></li>
-                    <li class="sam5"><a href="#colombia">Colombia</a></li>
-                    <li class="sam6"><a href="#ecuador">Ecuador</a></li>
-                    <li class="sam7"><a href="#guyana">Guyana</a></li>
-                    <li class="sam8"><a href="#french-guiana">Guyane <small>(French Guiana)</small></a></li>
-                    <li class="sam9"><a href="#paraguay">Paraguay</a></li>
+                    <li class="sam5"><a href="#colombia">Kolumbia</a></li>
+                    <li class="sam6"><a href="#ecuador">Ekwador</a></li>
+                    <li class="sam7"><a href="#guyana">Gujana</a></li>
+                    <li class="sam8"><a href="#french-guiana">Gujana <small>(Gujana Francuska)</small></a></li>
+                    <li class="sam9"><a href="#paraguay">Paragway</a></li>
                     <li class="sam10"><a href="#peru">Peru</a></li>
-                    <li class="sam11"><a href="#suriname">Suriname</a></li>
-                    <li class="sam12"><a href="#uruguay">Uruguay</a></li>
-                    <li class="sam13"><a href="#venezuela">Venezuela</a></li>
-                    <li class="sam14"><a href="#falkland-islands">Falkland Islands</a></li>
+                    <li class="sam11"><a href="#suriname">Surinam</a></li>
+                    <li class="sam12"><a href="#uruguay">Urugway</a></li>
+                    <li class="sam13"><a href="#venezuela">Wenezuela</a></li>
+                    <li class="sam14"><a href="#falkland-islands">Falklandy <small>(Malwiny)</small></a></li>
                     </ul>
                 </div>
-   <!-- END OF THE CSSMap - South America -->
-   
+<!-- END OF THE CSSMap - South America -->
+            </div>
+        </div>
+<!-- descriptions -->
+        <div class="col-lg-6">
+<!-- country info -->
+            <div class="border border-secondary rounded-3 mx-auto col-lg-12 text-center my-3 elementContainer" style="height: 20vh;">
+                <h5>Zaznacz na mapie kraj, który chcesz odwiedzić i sprawdź czy twoje marzenia są w zasięgu ręki!</h5>
+                <h6 id="country">Peru</h6>
+                <h6 id="currency">Nuevo Sol (S)</h6>
+                <h6 id="rate">XX</h6>
+            </div>
+<!-- Average travel cost per day -->
+            <div class="border border-secondary rounded-3 mx-auto my3 col-lg-12 elementContainer">
+                <table>
+                    <tr>
+                        <th colspan="4">Jaki jest średni dzienny koszt podróży?</th>
+                    </tr>
+                    <tr>
+                        <td>Oszczędnie poznajesz świat</td>
+                        <td>Poszukujesz małych przyjemności</td>
+                        <td>Kiedy małe atrakcje są już troszkę większe</td>
+                        <td>Nie przejmujesz się kosztami</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="radio" class="btn-check" name="options-outlined" id="budget" autocomplete="off">
+                            <label class="btn btn-outline-warning" for="warning-outlined">$</label>
+                        </td>
+                        <td>
+                            <input type="radio" class="btn-check" name="options-outlined" id="medLow" autocomplete="off">
+                            <label class="btn btn-outline-warning" for="warning-outlined">$$</label>
+                        </td>
+                        <td>
+                            <input type="radio" class="btn-check" name="options-outlined" id="medHigh" autocomplete="off">
+                            <label class="btn btn-outline-warning" for="warning-outlined">$$$</label>
+                        </td>
+                        <td>
+                            <input type="radio" class="btn-check" name="options-outlined" id="highEnd" autocomplete="off">
+                            <label class="btn btn-outline-warning" for="warning-outlined">$$$$</label>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+<!-- Your trip assumptions -->
+            <div class="border border-secondary rounded-3 me-5 my-3 elementContainer">
+                <label for="tripLength" class="form-label">Długość wakacji</label>
+                <input type="range" class="form-range mx-3" value="14" min="1" max="30" step="1" id="tripLength" oninput="this.nextElementSibling.value = this.value" style="width: 40vw;">
+                <output>14</output>
+            </div>
+<!-- Trip summary -->
+            <div class="border border-secondary rounded-3 me-5 my-3 elementContainer" style="height: 20vh;">
+
             </div>
         </div>
     </div>
@@ -46,6 +99,7 @@
     <!-- setting up an external CSS map -->
 
     <!-- CSSMap STYLESHEET - SOUTH AMERICA -->
+    <!-- CSSMap plugin by Łukasz Popardowski -->
     <link rel="stylesheet" type="text/css" href="./cssmap-south-america/cssmap-south-america/cssmap-south-america.css" media="screen" />
     <!-- jQuery -->
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

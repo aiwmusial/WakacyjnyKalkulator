@@ -1,0 +1,11 @@
+#homePage{
+    background-image: url('../img/alexander-schimmeck-gLtJea5taXo-unsplash.jpg');
+    background-repeat: no-repeat;
+}
+.mapContainer{
+    background-color: #008b77;
+}
+.elementContainer{
+    background-color: #e2e2dbef;
+    opacity: 80%;
+}
