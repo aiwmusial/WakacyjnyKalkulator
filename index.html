@@ -7,6 +7,8 @@
     <meta name="author" content="Anna Musiał">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <!-- Font Awsome library link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <!-- Style sheet -->
     <link rel="stylesheet" href="/styles/styles.css">
     <title>Wakacyjny Kalkulator</title>
@@ -15,26 +17,27 @@
     <section>
 <div class="container-fluid" id="homePage">
     <div class="row" style="height: 100vh;">
-<!-- map load -->
+        <!-- map load -->
+        <h1 class="text-center">Wakacyjny Kalkulator <i class="fas fa-umbrella-beach"></i></h1>
         <div class="col-lg-6  d-flex align-items-center">
-            <div class="border border-dark rounded-3 mx-auto mapContainer" style="width: 23rem;">
+            <div class="mx-auto mapContainer img-fluid" style="width: 28rem;">
 <!-- CSSMap - South America -->
                 <div id="map-south-america">
                     <ul class="south-america">
-                    <li class="sam1"><a href="#argentina">Argentyna</a></li>
-                    <li class="sam2"><a href="#bolivia">Boliwia</a></li>
-                    <li class="sam3"><a href="#brazil">Brazylia</a></li>
-                    <li class="sam4"><a href="#chile">Chile</a></li>
-                    <li class="sam5"><a href="#colombia">Kolumbia</a></li>
-                    <li class="sam6"><a href="#ecuador">Ekwador</a></li>
-                    <li class="sam7"><a href="#guyana">Gujana</a></li>
-                    <li class="sam8"><a href="#french-guiana">Gujana <small>(Gujana Francuska)</small></a></li>
-                    <li class="sam9"><a href="#paraguay">Paragway</a></li>
-                    <li class="sam10"><a href="#peru">Peru</a></li>
-                    <li class="sam11"><a href="#suriname">Surinam</a></li>
-                    <li class="sam12"><a href="#uruguay">Urugway</a></li>
-                    <li class="sam13"><a href="#venezuela">Wenezuela</a></li>
-                    <li class="sam14"><a href="#falkland-islands">Falklandy <small>(Malwiny)</small></a></li>
+                    <li class="sam1" onclick="currencyExchange(argentina)"><a href="#argentina">Argentyna</a></li>
+                    <li class="sam2" onclick="currencyExchange(bolivia)"><a href="#bolivia">Boliwia</a></li>
+                    <li class="sam3" onclick="currencyExchange(brazil)"><a href="#brazil">Brazylia</a></li>
+                    <li class="sam4" onclick="currencyExchange(chile)"><a href="#chile">Chile</a></li>
+                    <li class="sam5" onclick="currencyExchange(colombia)"><a href="#colombia">Kolumbia</a></li>
+                    <li class="sam6" onclick="currencyExchange(ecuador)"><a href="#ecuador">Ekwador</a></li>
+                    <li class="sam7" onclick="currencyExchange(guyana)"><a href="#guyana">Gujana</a></li>
+                    <li class="sam8" onclick="currencyExchange(french-guiana)"><a href="#french-guiana">Gujana <small>(Gujana Francuska)</small></a></li>
+                    <li class="sam9" onclick="currencyExchange(paraguay)"><a href="#paraguay">Paragway</a></li>
+                    <li class="sam10" onclick="currencyExchange(peru)"><a href="#peru">Peru</a></li>
+                    <li class="sam11" onclick="currencyExchange(suriname)"><a href="#suriname">Surinam</a></li>
+                    <li class="sam12" onclick="currencyExchange(uruguay)"><a href="#uruguay">Urugway</a></li>
+                    <li class="sam13" onclick="currencyExchange(venezuela)"><a href="#venezuela">Wenezuela</a></li>
+                    <li class="sam14" onclick="currencyExchange(falkland-islands)"><a href="#falkland-islands">Falklandy <small>(Malwiny)</small></a></li>
                     </ul>
                 </div>
 <!-- END OF THE CSSMap - South America -->
@@ -44,14 +47,14 @@
         <div class="col-lg-6">
 <!-- country info -->
             <div class="border border-secondary rounded-3 mx-auto col-lg-12 text-center my-3 elementContainer" style="height: 20vh;">
-                <h5>Zaznacz na mapie kraj, który chcesz odwiedzić i sprawdź czy twoje marzenia są w zasięgu ręki!</h5>
-                <h6 id="country">Peru</h6>
-                <h6 id="currency">Nuevo Sol (S)</h6>
-                <h6 id="rate">XX</h6>
+                <h3>Zaznacz na mapie kraj, który chcesz odwiedzić i sprawdź czy twoje marzenia są w zasięgu ręki!</h3>
+                <h4 id="country">Peru</h4>
+                <h4 id="currency">Nuevo Sol (S)</h4>
+                <h4 id="rate">XX</h4>
             </div>
 <!-- Average travel cost per day -->
             <div class="border border-secondary rounded-3 mx-auto my3 col-lg-12 elementContainer">
-                <table>
+                <table class="text-center">
                     <tr>
                         <th colspan="4">Jaki jest średni dzienny koszt podróży?</th>
                     </tr>
@@ -64,19 +67,19 @@
                     <tr>
                         <td>
                             <input type="radio" class="btn-check" name="options-outlined" id="budget" autocomplete="off">
-                            <label class="btn btn-outline-warning" for="warning-outlined">$</label>
+                            <label class="btn btn-outline-warning text-dark" for="warning-outlined">$</label>
                         </td>
                         <td>
                             <input type="radio" class="btn-check" name="options-outlined" id="medLow" autocomplete="off">
-                            <label class="btn btn-outline-warning" for="warning-outlined">$$</label>
+                            <label class="btn btn-outline-warning text-dark" for="warning-outlined">$$</label>
                         </td>
                         <td>
                             <input type="radio" class="btn-check" name="options-outlined" id="medHigh" autocomplete="off">
-                            <label class="btn btn-outline-warning" for="warning-outlined">$$$</label>
+                            <label class="btn btn-outline-warning text-dark" for="warning-outlined">$$$</label>
                         </td>
                         <td>
                             <input type="radio" class="btn-check" name="options-outlined" id="highEnd" autocomplete="off">
-                            <label class="btn btn-outline-warning" for="warning-outlined">$$$$</label>
+                            <label class="btn btn-outline-warning text-dark" for="warning-outlined">$$$$</label>
                         </td>
                     </tr>
                 </table>
@@ -96,6 +99,9 @@
 </div>
 
     </section>
+    <!-- my scripts -->
+    <script type="text/javascript" src="./scripts/currency.js"></script>
+    
     <!-- setting up an external CSS map -->
 
     <!-- CSSMap STYLESHEET - SOUTH AMERICA -->
@@ -111,7 +117,7 @@
         
         // CSSMap;
         $("#map-south-america").CSSMap({
-          "size": 320,
+          "size": 540,
           "tooltips": "floating-top-center",
           "responsive": "auto"
         });
