@@ -15,6 +15,8 @@ function currencyExchange(id){
         return i;
         }
         });
+    
+    
     console.log(indexOfElement);
 
 }
