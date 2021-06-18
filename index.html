@@ -5,6 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="Anna Musiał">
+    <!-- favicon -->
+    <link rel="title icon" href="./img/coconut-palm-312154_640.png">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <!-- Font Awsome library link -->
@@ -14,11 +16,11 @@
     <title>Wakacyjny Kalkulator</title>
   </head>
   <body>
-    <section>
-<div class="container-fluid" id="homePage">
-    <div class="row" style="height: 100vh;">
+    <section id="mainPage" style="min-height: 90vh;">
+<div class="container-fluid pb-1" id="homePage">
+    <div class="row">
         <!-- map load -->
-        <h1 class="text-center">Wakacyjny Kalkulator <i class="fas fa-umbrella-beach"></i></h1>
+        <h1 class="display-5 text-center mb-5"><img id="palm" src="./img/coconut-palm-312154_640.png" alt="palm"><span>WAKACYJNY KALKULATOR</span></h1>
         <div class="col-lg-6  d-flex align-items-center">
             <div class="mx-auto mapContainer img-fluid" style="width: 28rem;">
 <!-- CSSMap - South America -->
@@ -46,26 +48,22 @@
 <!-- descriptions -->
         <div class="col-lg-6">
 <!-- country info -->
-            <div class="border border-secondary rounded-3 mx-auto col-lg-12 text-center my-3 elementContainer" style="height: 20vh;">
-                <h3>Zaznacz na mapie kraj, który chcesz odwiedzić i sprawdź czy twoje marzenia są w zasięgu ręki!</h3>
-                <h4 id="country"></h4>
-                <h4 id="currency"></h4>
-                <h4 id="rate">XX</h4>
+            <div class="mx-auto col-lg-12 text-center my-3 elementContainer">
+                <h3 id="country">Zaznacz na mapie kraj, który chcesz odwiedzić</h3>
+                <h3 id="currency"> i sprawdź...</h3>
+                <h3 id="rate">...czy twoje marzenia są w zasięgu ręki!</h3>
             </div>
 <!-- Average travel cost per day -->
-            <div class="border border-secondary rounded-3 mx-auto my3 col-lg-12 elementContainer">
+            <div class="mx-auto my-3 col-lg-12">
                 <table class="text-center">
                     <tr>
                         <th colspan="4">Jaki jest średni dzienny koszt podróży?</th>
                     </tr>
-                    <!-- <tr>
-                        <th colspan="4">Poniższe kwoty wyrażone są w <span id="currencyUsed"></span></th>
-                    </tr> -->
                     <tr>
                         <td>Oszczędnie poznajesz świat</td>
-                        <td>Poszukujesz małych przyjemności</td>
-                        <td>Kiedy małe atrakcje są już troszkę większe</td>
-                        <td>Nie przejmujesz się kosztami</td>
+                        <td>Szukasz małych przyjemności</td>
+                        <td>...i troszkę większych</td>
+                        <td>Koszty to nie problem</td>
                     </tr>
                     <tr>
                         <td class="currencyUsed"></td>
@@ -75,26 +73,26 @@
                     </tr>
                     <tr>
                         <td>
-                            <input type="radio" class="btn-check" name="options-outlined" id="budget" autocomplete="off">
-                            <label class="btn btn-outline-warning text-dark" for="warning-outlined">$ <br>
+                            <input type="radio" class="btn-check" name="tripCost" id="budget" autocomplete="off">
+                            <label class="btn btn-warning text-dark" for="tripCostBudget">$ <br>
                             <span id="budgetTrip"></span>
                             </label>
                         </td>
                         <td>
-                            <input type="radio" class="btn-check" name="options-outlined" id="medLow" autocomplete="off">
-                            <label class="btn btn-outline-warning text-dark" for="warning-outlined">$$ <br>
+                            <input type="radio" class="btn-check" name="tripCost" id="medLow" autocomplete="off">
+                            <label class="btn btn-warning text-dark" for="tripCostMedLow">$$ <br>
                             <span id="midLowTrip"></span>
                             </label>
                         </td>
                         <td>
-                            <input type="radio" class="btn-check" name="options-outlined" id="medHigh" autocomplete="off">
-                            <label class="btn btn-outline-warning text-dark" for="warning-outlined">$$$ <br>
+                            <input type="radio" class="btn-check" name="tripCost" id="medHigh" autocomplete="off">
+                            <label class="btn btn-warning text-dark" for="tripCostMedHigh">$$$ <br>
                             <span id="midHighTrip"></span>
                             </label>
                         </td>
                         <td>
-                            <input type="radio" class="btn-check" name="options-outlined" id="highEnd" autocomplete="off">
-                            <label class="btn btn-outline-warning text-dark" for="warning-outlined">$$$$ <br>
+                            <input type="radio" class="btn-check" name="tripCost" id="highEnd" autocomplete="off">
+                            <label class="btn btn-warning text-dark" for="tripCostHighEnd">$$$$ <br>
                             <span id="topEndTrip"></span>
                             </label>
                         </td>
@@ -103,24 +101,35 @@
             </div>
 <!-- Your trip assumptions -->
 <!-- length of stay -->
-            <div class="border border-secondary rounded-3 me-5 my-3 elementContainer">
-                <label for="tripLength" class="form-label">Długość wakacji</label>
-                <input type="range" class="form-range mx-3" value="14" min="1" max="30" step="1" id="tripLength" oninput="this.nextElementSibling.value = this.value" style="width: 40vw;">
-                <output>14</output>
+            <div class="mx-5 my-2 elementContainer">
+                <label for="tripLength" class="form-label">Wybierz długość wakacji</label>
+                <input type="range" class="form-range mx-3" min="1" max="30" value="14" step="1" id="tripLengthInput" oninput="this.nextElementSibling.value = this.value" onchange="tripEstimator(this.value)" style="width: 40vw;">
+                <output id="tripLengthFind">14</output>
+                <br>
+                <!-- <button id="tripLengthFind" type="button" class="btn btn-warning text-dark">Potwierdź wybraną ilość dni</button> -->
             </div>
-<!-- Trip summary -->
-            <div class="border border-secondary rounded-3 me-5 my-3 elementContainer" style="height: 20vh;">
-                <h6>Waluta wykorzystana w analizie kosztów:</h6>
-                <h5 id="checkTabelaA"></h5>
-            </div>
+                <div id="costEstimate" class="my-1">
+
+                </div>
         </div>
     </div>
 </div>
-
     </section>
+
+    <!-- <section id="resultPage">
+        <div class="container-fluid pt-2">
+            <div class="row">
+                <div class="col"> -->
+                <!-- <div id="costEstimate" class="me-5 my-1 elementContainer">
+
+                </div> -->
+                <!-- </div>
+            </div>
+        </div>
+    </section> -->
     <!-- my scripts -->
     
-    <script type="text/javascript" src="./scripts/averageTripCosts.js"></script>
+    <!-- <script type="text/javascript" src="./scripts/averageTripCosts.js"></script> -->
     <script type="text/javascript" src="./scripts/currency.js"></script>
     
     <!-- setting up an external CSS map -->

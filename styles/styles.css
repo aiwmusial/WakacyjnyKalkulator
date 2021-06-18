@@ -1,16 +1,37 @@
-@import url('https://fonts.googleapis.com/css2?family=Just+Me+Again+Down+Here&display=swap');
-section{
-    background-image: linear-gradient( #66b0f5, #e3ede4);
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
+
+#mainPage{
+    background-image: linear-gradient(#53e4e4, #668cf5);
+}
+#resultPage{
+    background-image: linear-gradient(#668cf5, #685bdf);
+}
+
+
+/* heading */
+#palm{
+    height: 50px;
+}
+h1 span{
+    color: #eef1e5;
+    /* font-family: 'Roboto', sans-serif; */
+    font-family: 'Shadows Into Light', cursive;
 }
 *{
-    font-family: 'Just Me Again Down Here', cursive;
+    color: #eef1e5;
+    font-family: 'Roboto', sans-serif;
+}
+h6{
     font-weight: bold;
 }
 
-/* #homePage{ */
-    /* background-image: url('../img/alexander-schimmeck-gLtJea5taXo-unsplash.jpg');
-    background-repeat: no-repeat; */
-/* } */
+a{
+    color: #eef1e5;
+}
+a:hover{
+    color: #ddcf08;
+}
 /* .mapContainer{
     background-color: #def3f0;
 } */
