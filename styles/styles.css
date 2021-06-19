@@ -18,6 +18,7 @@ h1 span{
     font-family: 'Bangers';
     text-shadow: 2px 2px #0a0a08;
 }
+/* country info */
 h2{
     font-weight: bold;
     color: #ECA824;
@@ -28,11 +29,8 @@ h3{
     color: #eaebf8;
     text-shadow: 1px 1px #0a0a08;
 }
-h6{
-    font-weight: bold;
-}
 
-
+/* avg cost detailed */
 th{
     font-weight: bold;
     font-size: 1.1em;
@@ -59,9 +57,11 @@ td p{
     font-weight: bold;
 }
 /* slider thumbnail styling */
-    #tripLengthInput::-webkit-slider-thumb{
-        background-color: #3cc43c;
-      }
+#tripLengthInput::-webkit-slider-thumb{
+    background-color: #3cc43c;
+}
+
+/* analysis results JS innerHTML */
 ul{
     list-style: none;
 }
@@ -82,16 +82,16 @@ li{
     box-shadow: 2px 2px #0a0a08;
     font-weight: bold;
     font-size: 1.1em;
-    color: #fac801;
+    color: #e5e6f1;
     text-shadow: 1px 1px #2a2c2c;
 }
 a{
     font-size: 1.1em;
-    color: #fac801;
+    color: #e5e6f1;
     text-shadow: 1px 1px #2a2c2c;
 }
 a:hover{
-    color: #e5e6f1;
+    color: #fac801;
     text-shadow: 1px 1px #060CC0; 
 }
 .disclaimer{
