@@ -20,7 +20,7 @@
 <div class="container-fluid pb-1" id="homePage">
     <div class="row">
         <!-- map load -->
-        <h1 class="display-5 text-center mb-5"><img id="palm" src="./img/coconut-palm-312154_640.png" alt="palm"><span>WAKACYJNY KALKULATOR</span></h1>
+        <h1 class="display-5 text-center mt-1 mb-1"><span>WAKACYJNY KALKULATOR</span><img class="ms-2" id="pinapple" src="./img/cartoon-4764726_640.png" alt="pinapple"></h1>
         <div class="col-lg-6  d-flex align-items-center">
             <div class="mx-auto mapContainer img-fluid" style="width: 28rem;">
 <!-- CSSMap - South America -->
@@ -48,10 +48,12 @@
 <!-- descriptions -->
         <div class="col-lg-6">
 <!-- country info -->
-            <div class="mx-auto col-lg-12 text-center my-3 elementContainer">
-                <h3 id="country">Zaznacz na mapie kraj, który chcesz odwiedzić</h3>
-                <h3 id="currency"> i sprawdź...</h3>
-                <h3 id="rate">...czy twoje marzenia są w zasięgu ręki!</h3>
+            <div class="mx-auto col-lg-12 text-center mt-2 p-2">
+                <div class="countryDisplay mx-auto">
+                    <h2 id="country">Zaznacz na mapie kraj, który chcesz odwiedzić</h2>
+                    <h3 id="currency"> i sprawdź...</h3>
+                    <h3 id="rate">...czy twoje marzenia są w zasięgu ręki!</h3>
+                </div>
             </div>
 <!-- Average travel cost per day -->
             <div class="mx-auto my-3 col-lg-12">
@@ -60,50 +62,42 @@
                         <th colspan="4">Jaki jest średni dzienny koszt podróży?</th>
                     </tr>
                     <tr>
-                        <td>Oszczędnie poznajesz świat</td>
-                        <td>Szukasz małych przyjemności</td>
-                        <td>...i troszkę większych</td>
-                        <td>Koszty to nie problem</td>
+                        <td class="p-2 tdDescr">Oszczędnie poznajesz świat</td>
+                        <td class="p-2 tdDescr">Szukasz małych przyjemności</td>
+                        <td class="p-2 tdDescr">...i troszkę większych</td>
+                        <td class="p-2 tdDescr">Koszty to nie problem</td>
                     </tr>
                     <tr>
-                        <td class="currencyUsed"></td>
-                        <td class="currencyUsed"></td>
-                        <td class="currencyUsed"></td>
-                        <td class="currencyUsed"></td>
+                        <td class="currencyUsed tdDescr"></td>
+                        <td class="currencyUsed tdDescr"></td>
+                        <td class="currencyUsed tdDescr"></td>
+                        <td class="currencyUsed tdDescr"></td>
                     </tr>
                     <tr>
                         <td>
-                            <input type="radio" class="btn-check" name="tripCost" id="budget" autocomplete="off">
-                            <label class="btn btn-warning text-dark" for="tripCostBudget">$ <br>
-                            <span id="budgetTrip"></span>
-                            </label>
+                            <p class="bgCost m-2" for="tripCostBudget" id="budgetTrip">$ <br>
+                            </p>
                         </td>
                         <td>
-                            <input type="radio" class="btn-check" name="tripCost" id="medLow" autocomplete="off">
-                            <label class="btn btn-warning text-dark" for="tripCostMedLow">$$ <br>
-                            <span id="midLowTrip"></span>
-                            </label>
+                            <p class="bgCost m-2" for="tripCostMedLow" id="midLowTrip">$$ <br>
+                            </p>
                         </td>
                         <td>
-                            <input type="radio" class="btn-check" name="tripCost" id="medHigh" autocomplete="off">
-                            <label class="btn btn-warning text-dark" for="tripCostMedHigh">$$$ <br>
-                            <span id="midHighTrip"></span>
-                            </label>
+                            <p class="bgCost m-2" for="tripCostMedHigh" id="midHighTrip">$$$ <br>
+                            </p>
                         </td>
                         <td>
-                            <input type="radio" class="btn-check" name="tripCost" id="highEnd" autocomplete="off">
-                            <label class="btn btn-warning text-dark" for="tripCostHighEnd">$$$$ <br>
-                            <span id="topEndTrip"></span>
-                            </label>
+                            <p class="bgCost m-2" for="tripCostHighEnd" id="topEndTrip">$$$$ <br>
+                            </p>
                         </td>
                     </tr>
                 </table>
             </div>
 <!-- Your trip assumptions -->
 <!-- length of stay -->
-            <div class="mx-5 my-2 elementContainer">
+            <div class="mx-5 my-2 elementContainer text-center">
                 <label for="tripLength" class="form-label">Wybierz długość wakacji</label>
-                <input type="range" class="form-range mx-3" min="1" max="30" value="14" step="1" id="tripLengthInput" oninput="this.nextElementSibling.value = this.value" onchange="tripEstimator(this.value)" style="width: 40vw;">
+                <input type="range" class="form-range mx-3" min="1" max="30" value="14" step="1" id="tripLengthInput" oninput="this.nextElementSibling.value = this.value" onchange="tripEstimator(this.value)" style="width: 100%;">
                 <output id="tripLengthFind">14</output>
                 <br>
                 <!-- <button id="tripLengthFind" type="button" class="btn btn-warning text-dark">Potwierdź wybraną ilość dni</button> -->

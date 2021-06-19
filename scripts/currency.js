@@ -37,7 +37,11 @@ function currencyExchange(id){
 
     // adding to the HTML the name of the country selected on the map 
         country.innerHTML = avgCost[indexOfElement]['country'];
-
+    
+    // special information regarding Wenezuela
+        if(avgCost[indexOfElement]['country'] == 'Wenezuela'){
+            alert("Ministerstwo Spraw Zagranicznych odradza wszelkie podróże do Wenezueli!")
+        }
     // adding to the HTML the currency of the country selected on the map 
         currency.innerHTML = avgCost[indexOfElement]['currency'];
     // // displaying daily rate
@@ -128,27 +132,31 @@ function tripEstimator(slider){
     let budgetTripEstmTopEnd = dailyRate * Number(topEndTrip) * daysTrip;
 
     // presenting the results of the analysis
-    document.getElementById('costEstimate').innerHTML = 
+    if(isNaN(budgetTripEstmBudget)){
+        alert("Wybierz kraj, a następnie ilość dni!")
+    }else{
+        return document.getElementById('costEstimate').innerHTML = 
                                                     `
-                                                        <div class="mx-auto mt-5">
-                                                        <p>
+                                                        <div class="mx-auto mt-3">
+                                                        <p class="form-label text-center">
                                                             Jeśli pojedziesz na ${slider} dni, to za cały pobyt zapłacisz:
                                                         </p>
-                                                            <ul>
-                                                                <li><span class="priceTrip">${budgetTripEstmBudget.toFixed()}zł</span> - jeśli podróżujesz z plecakiem i nie straszne ci hostele, na wycieczki wybierasz się transportem publicznym</li>
-                                                                <li><span class="priceTrip">${budgetTripEstmMidLow.toFixed()}zł</span> - możesz pozwolić sobie na noclegi w pensionatach i posiłki w małych restauracyjkach, przemieszczasz się transportem publicznym</li>
-                                                                <li><span class="priceTrip">${budgetTripEstmMidHigh.toFixed()}zł</span> - oprócz noclegów w mniejszych hotelach, od czasu do czasu możesz wynająć samochód na dłuższe wycieczki</li>
-                                                                <li><span class="priceTrip">${budgetTripEstmTopEnd.toFixed()}zł</span> - stołujesz się w fajnych restauracjach, możesz sobie pozwolić na noclegi w ekscluzywnych hotelach</li>
+                                                            <ul class="mx-auto">
+                                                                <li class="m-3 text-center p-2"><span class="priceTrip">${budgetTripEstmBudget.toFixed()}zł</span> <br> jeśli podróżujesz z plecakiem i nie straszne ci hostele, a na wycieczki wybierasz się transportem publicznym</li>
+                                                                <li class="m-3 text-center p-2"><span class="priceTrip">${budgetTripEstmMidLow.toFixed()}zł</span> <br> możesz pozwolić sobie na noclegi w pensionatach i posiłki w małych restauracyjkach, przemieszczasz się transportem publicznym</li>
+                                                                <li class="m-3 text-center p-2"><span class="priceTrip">${budgetTripEstmMidHigh.toFixed()}zł</span> <br> oprócz noclegów w mniejszych hotelach, od czasu do czasu możesz wynająć samochód na dłuższe wycieczki</li>
+                                                                <li class="m-3 text-center p-2"><span class="priceTrip">${budgetTripEstmTopEnd.toFixed()}zł</span> <br> stołujesz się w fajnych restauracjach, możesz sobie pozwolić na noclegi w ekscluzywnych hotelach</li>
                                                             </ul>
-                                                            <p class="my-3 lead">
-                                                                Przygotuj się do swojej podróży i sprawdź <a href="https://www.gov.pl/web/dyplomacja/informacje-dla-podrozujacych" target="_blank">informacje dla podróżujących.</a>
+                                                            <p class="my-3 p-2 text-center checkBeforeYouGo col-8 mx-auto">
+                                                                Przygotuj się do swojej podróży i sprawdź <a href="https://www.gov.pl/web/dyplomacja/informacje-dla-podrozujacych" target="_blank">informacje dla podróżujących przygotowane przez MSZ.</a><br>
+                                                                Pamiętaj, przed podróżą zarejestruj się w systemie <a href="https://odyseusz.msz.gov.pl/" target="_blank">Odyseusz!</a>
                                                             </p>
-                                                        <p class="small">
+                                                        <p class="text-center disclaimer">
                                                             Podane średnie koszty podróży to tylko ceny szacunkowe pobytu, z wyłączeniem kosztów przelotu do danego kraju.
                                                         </p>
                                                     </div>
                                                         `;
-    
+    }
     console.log(budgetTripEstmBudget);
     console.log(budgetTripEstmMidLow);
     console.log(budgetTripEstmMidHigh);
