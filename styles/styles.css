@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
 
 #mainPage{
-    background-image: linear-gradient(#0307be, #668cf5);
+    background-image: linear-gradient(#0e0f4e, #668cf5);
 }
 
 *{
@@ -43,12 +43,11 @@ th{
 }
 
 td p{
-    background-color: #3cc43c;
+    background-color: #379637;
     box-shadow: 2px 2px #1b1b16;
     color: #e5e6f1;
     text-shadow: 1px 1px #060CC0;
     font-weight: bold;
-    ;
 }
 .form-label, #tripLengthFind{
     color: #ECA824;
@@ -58,7 +57,7 @@ td p{
 }
 /* slider thumbnail styling */
 #tripLengthInput::-webkit-slider-thumb{
-    background-color: #3cc43c;
+    background-color: #379637;
 }
 
 /* analysis results JS innerHTML */
@@ -66,7 +65,7 @@ ul{
     list-style: none;
 }
 li{
-    background-color: #3cc43c;
+    background-color: #379637;
     box-shadow: 2px 2px #0a0a08;
     color: #e5e6f1;
     text-shadow: 1px 1px #060CC0; 
@@ -78,10 +77,10 @@ li{
     text-shadow: 1px 1px #2a2c2c;
 }
 .checkBeforeYouGo{
-    background-color: #ED1944;
+    background-color: #c42444;
     box-shadow: 2px 2px #0a0a08;
     font-weight: bold;
-    font-size: 1.1em;
+    font-size: 0.9em;
     color: #e5e6f1;
     text-shadow: 1px 1px #2a2c2c;
 }
@@ -91,7 +90,7 @@ a{
     text-shadow: 1px 1px #2a2c2c;
 }
 a:hover{
-    color: #fac801;
+    color: #e5e6f1;
     text-shadow: 1px 1px #060CC0; 
 }
 .disclaimer{
