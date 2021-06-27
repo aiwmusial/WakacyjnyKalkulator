@@ -69,7 +69,7 @@ td p{
 /* analysis results JS innerHTML */
 ul{
     list-style: none;
-    list-style-position: inside;
+    padding: 0;
 }
 li{
     background-color: #379637;
