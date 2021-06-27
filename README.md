@@ -22,6 +22,7 @@ I decided to present my findings in a small app. Please see how it works and try
 
 * HTML
 * CSS 
+* Bootstrap 5
 * JavaScript
 * Fetch
 * External CSS map plugin *(CSSMap plugin by Łukasz Popardowski)*
