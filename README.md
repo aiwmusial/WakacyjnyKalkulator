@@ -31,3 +31,7 @@ I decided to present my findings in a small app. Please see how it works and try
 * I used fetch API to get the current currency rate
 * Using information from the map prepared by others
 * Getting a value from the input range slider
+
+### Try Wakacyjny Kalkulator yourself and plan your trips!
+
+### https://aiwmusial.github.io/WakacyjnyKalkulator/index.html
